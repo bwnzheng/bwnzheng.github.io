@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Bowen Zheng, PhD candidate at LAMDA, Nanjing University. Research in continual learning, generative models, and agentic image generation."><meta name="theme-color" content="#101310"><script>
+      document.documentElement.classList.add('js-enabled');
+    </script><script>// Runs in the head before first paint, shared by every page.
+(() => {
+  const storageKey = 'bwnzheng-theme';
+  const system = window.matchMedia('(prefers-color-scheme: dark)');
+  const normalize = (value) => (['light', 'dark'].includes(value) ? value : 'system');
+  let preference = 'system';
+  try {
+    preference = normalize(localStorage.getItem(storageKey));
+  } catch {
+    // A blocked storage API should not prevent theme switching.
+  }
+  const apply = () => {
+    const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = preference;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#101310' : '#e9eef5');
+    const select = document.getElementById('theme-select');
+    if (select) select.value = preference;
+  };
+  apply();
+  system.addEventListener('change', () => {
+    if (preference === 'system') apply();
+  });
+  window.addEventListener('storage', (event) => {
+    if (event.key === storageKey || event.key === null) {
+      preference = normalize(event.newValue);
+      apply();
+    }
+  });
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      apply();
+      document.getElementById('theme-select')?.addEventListener('change', (event) => {
+        preference = normalize(event.target.value);
+        try {
+          if (preference === 'system') localStorage.removeItem(storageKey);
+          else localStorage.setItem(storageKey, preference);
+        } catch {
+          // Keep the choice active in this page even when persistence is unavailable.
+        }
+        apply();
+      });
+    },
+    { once: true },
+  );
+})();
+</script><meta name="generator" content="Astro v7.3.5"><title>页面未找到 · Page not found · Bowen Zheng</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://bwnzheng.github.io/404/"><meta property="og:title" content="页面未找到 · Page not found · Bowen Zheng"><meta property="og:description" content="Bowen Zheng, PhD candidate at LAMDA, Nanjing University. Research in continual learning, generative models, and agentic image generation."><meta property="og:type" content="website"><meta property="og:url" content="https://bwnzheng.github.io/404/"><link rel="stylesheet" href="/_astro/BaseLayout.BLHPv5Hu.css"><style>.page-heading-with-quote[data-astro-cid-s7fn5vct]{max-width:none}.page-heading-title-row[data-astro-cid-s7fn5vct]{justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px;display:flex}.page-heading-title-row[data-astro-cid-s7fn5vct] h1[data-astro-cid-s7fn5vct]{flex-shrink:0;margin-bottom:0}.page-heading-quote[data-astro-cid-s7fn5vct]{margin:0;text-align:right;max-width:420px;color:var(--muted);margin-inline-start:auto;line-height:1.8}.page-heading-quote[data-astro-cid-s7fn5vct] p[data-astro-cid-s7fn5vct]{margin:0}.page-heading-quote[data-astro-cid-s7fn5vct]>[data-astro-cid-s7fn5vct][lang=zh]{letter-spacing:.06em;font-family:Kaiti SC,STKaiti,KaiTi,楷体,serif;font-size:clamp(20px,2vw,24px)}.page-heading-quote[data-astro-cid-s7fn5vct]>[data-astro-cid-s7fn5vct][lang=en]{font-synthesis:style;margin-top:6px;font-family:Georgia,Times New Roman,serif;font-size:16px;font-style:italic;line-height:1.6}.page-heading-long-quote[data-astro-cid-s7fn5vct] .page-heading-quote[data-astro-cid-s7fn5vct]{max-width:560px}.quote-author[data-astro-cid-s7fn5vct]{flex-wrap:wrap;justify-content:flex-end;gap:0 8px;margin-top:12px;font-size:13px;line-height:1.6;display:flex}@media (width>=701px) and (width<=1000px){.page-heading-long-quote[data-astro-cid-s7fn5vct]{flex-direction:column;align-items:flex-start}}@media (width<=700px){.page-heading-title-row[data-astro-cid-s7fn5vct]{flex-direction:column;align-items:flex-start;gap:16px}.page-heading-quote[data-astro-cid-s7fn5vct]{text-align:left;margin-inline-start:0}.quote-author[data-astro-cid-s7fn5vct]{justify-content:flex-start}}
+.empty-state[data-astro-cid-ibpinaeu] .page-heading{margin-inline:auto;padding:0}.empty-state[data-astro-cid-ibpinaeu] .eyebrow{justify-content:center}.empty-state[data-astro-cid-ibpinaeu] .lead{margin-inline:auto}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="/" aria-label="Bowen Zheng home">bwnzheng<span>↗</span><span class="wordmark-caption">BOWEN ZHENG<br>RESEARCH & BEYOND</span></a><div class="header-controls"><nav aria-label="Main navigation"><a href="/">主页 / Home</a><a href="/research/">研究 / Research</a><a href="/resume/">简历 / Resume</a><a href="/blog/">思考 / Thoughts</a></nav><label class="theme-picker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"></path></svg><span class="sr-only">主题 / Color theme</span><select id="theme-select" aria-label="主题 / Color theme"><option value="system">跟随系统 / System</option><option value="light">日间 / Light</option><option value="dark">夜间 / Dark</option></select><script>
+            // Restore the choice as soon as the control is parsed, before first paint.
+            document.getElementById('theme-select').value =
+              document.documentElement.dataset.themePreference || 'system';
+          </script></label></div></header><main id="main"><div class="wrap empty-state" data-astro-cid-ibpinaeu><header class="page-heading" data-astro-cid-s7fn5vct><p class="eyebrow" data-astro-cid-s7fn5vct><span data-astro-cid-s7fn5vct>404 /</span><span lang="zh" data-astro-cid-s7fn5vct>已知空间之外</span><span lang="en" data-astro-cid-s7fn5vct>OUTSIDE THE KNOWN SPACE</span></p><div data-astro-cid-s7fn5vct><h1 class="bilingual-title" data-astro-cid-s7fn5vct><span lang="zh" data-astro-cid-s7fn5vct>这个页面尚未被发现。</span><span class="title-en" lang="en" data-astro-cid-s7fn5vct>This page hasn’t been discovered.</span></h1></div><p class="lead" lang="zh" data-astro-cid-s7fn5vct>页面可能已移动，或链接地址有误。</p><p class="lead" lang="en" data-astro-cid-s7fn5vct>The page may have moved, or the link may be incorrect.</p></header><a class="button primary" href="/" data-astro-cid-ibpinaeu>返回主页 / Back to home →</a></div></main><footer class="wrap site-footer"><div><a class="footer-name" href="/"><span lang="zh">郑博文</span><span lang="en">Bowen Zheng</span></a></div><div class="footer-links"><a href="mailto:zhengbw@lamda.nju.edu.cn">Email ↗</a><a href="https://github.com/bwnzheng" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">LAMDA ↗</a></div><div class="footer-bottom"><a href="/credits/">致谢 / Credits ↗</a><div class="footer-editing"><span lang="zh">最后编辑</span> / <span lang="en">Last Edited</span> :<time datetime="2026-10-07">2026 / 10 / 7</time></div></div></footer><script>(() => {
+  // This script restores the position; disable competing browser restoration.
+  history.scrollRestoration = 'manual';
+  const storageKey = `page-state:${location.pathname}${location.search}`;
+  const panels = [...document.querySelectorAll('details[id]')];
+  const entry = history.state?.pageNavigation;
+  let snapshot = entry;
+  if (!snapshot) {
+    try {
+      snapshot = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
+    } catch {
+      // History restoration still works when session storage is unavailable.
+    }
+  }
+
+  const sameSiteSource = (value) => {
+    if (!value) return null;
+    try {
+      const source = new URL(value, location.href);
+      return source.origin === location.origin &&
+        (source.pathname !== location.pathname || source.search !== location.search)
+        ? source.href
+        : null;
+    } catch {
+      return null;
+    }
+  };
+  // Keep the source on this history entry so a refresh cannot change it.
+  const returnTo = sameSiteSource(entry?.returnTo ?? document.referrer);
+  history.replaceState({ ...history.state, pageNavigation: { ...snapshot, returnTo } }, '');
+
+  const openHashTarget = () => {
+    let target;
+    try {
+      target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    } catch {
+      return null;
+    }
+    for (
+      let panel = target?.closest('details');
+      panel;
+      panel = panel.parentElement?.closest('details')
+    ) {
+      panel.open = true;
+    }
+    return target;
+  };
+  const restore = () => {
+    const saved = history.state?.pageNavigation;
+    if (Array.isArray(saved?.open)) {
+      panels.forEach((panel) => {
+        panel.open = saved.open.includes(panel.id);
+      });
+    }
+    return openHashTarget();
+  };
+  let ready = false;
+  let saveFrame = 0;
+  const save = () => {
+    cancelAnimationFrame(saveFrame);
+    saveFrame = 0;
+    if (!ready) return;
+    const saved = {
+      returnTo,
+      open: panels.filter((panel) => panel.open).map((panel) => panel.id),
+      scrollY: window.scrollY,
+    };
+    history.replaceState({ ...history.state, pageNavigation: saved }, '');
+    try {
+      // Also restore when a return link loads the source as a new history entry.
+      sessionStorage.setItem(
+        storageKey,
+        JSON.stringify({ open: saved.open, scrollY: saved.scrollY }),
+      );
+    } catch {
+      // Storage restrictions must not prevent normal navigation.
+    }
+  };
+  restore();
+  panels.forEach((panel) => panel.addEventListener('toggle', save));
+  document.addEventListener('click', save, { capture: true });
+  // Update the history entry while scrolling: pagehide may be too late for reload.
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ready && !saveFrame) saveFrame = requestAnimationFrame(save);
+    },
+    { passive: true },
+  );
+  window.addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) save();
+  });
+  window.addEventListener('hashchange', openHashTarget);
+  window.addEventListener('pageshow', () => {
+    ready = false;
+    cancelAnimationFrame(saveFrame);
+    saveFrame = 0;
+    const target = restore();
+    const saved = history.state?.pageNavigation;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        if (typeof saved?.scrollY === 'number') {
+          window.scrollTo({ top: saved.scrollY, behavior: 'instant' });
+        } else {
+          target?.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+        ready = true;
+      }),
+    );
+  });
+
+  document.querySelectorAll('[data-back-link]').forEach((link) => {
+    if (!returnTo) return;
+    link.href = returnTo;
+    link.addEventListener('click', (event) => {
+      if (
+        event.button ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        history.length < 2
+      )
+        return;
+      event.preventDefault();
+      history.back();
+    });
+  });
+})();
+</script></body></html>

@@ -1,0 +1,22 @@
+<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" fill="none">
+  <defs>
+    <linearGradient id="ig-bg" x1="0" y1="0" x2="1200" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="var(--field-art-start, #1C2D25)"/><stop offset=".55" stop-color="var(--field-art-mid, #253F3D)"/><stop offset="1" stop-color="var(--field-art-end, #413D2C)"/></linearGradient>
+    <radialGradient id="ig-glow" cx="0" cy="0" r="1" gradientTransform="translate(870 210) rotate(90) scale(340 390)" gradientUnits="userSpaceOnUse"><stop stop-color="var(--field-art-glow, #A4E6AD)" stop-opacity=".48"/><stop offset="1" stop-color="var(--field-art-glow, #A4E6AD)" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ig-tile" x1="650" y1="85" x2="1060" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="var(--field-art-tile-start, #A8D6B3)"/><stop offset=".52" stop-color="var(--field-art-tile-mid, #789D92)"/><stop offset="1" stop-color="var(--field-art-tile-end, #D9BD82)"/></linearGradient>
+    <pattern id="ig-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" stroke="var(--field-art-line, #C5F578)" stroke-opacity=".09"/></pattern>
+    <filter id="ig-blur"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <path fill="url(#ig-bg)" d="M0 0h1200v440H0z"/><path fill="url(#ig-grid)" d="M0 0h1200v440H0z"/><path fill="url(#ig-glow)" d="M0 0h1200v440H0z"/>
+  <g transform="translate(622 42)">
+    <rect x="12" y="40" width="326" height="272" rx="16" fill="var(--field-art-panel, #0E211D)" stroke="var(--field-art-line, #BCE9BC)" stroke-opacity=".38" transform="rotate(-10 12 40)"/>
+    <rect x="130" y="30" width="326" height="272" rx="16" fill="var(--field-art-panel-alt, #0F2525)" stroke="var(--field-art-line, #BCE9BC)" stroke-opacity=".45" transform="rotate(9 130 30)"/>
+    <rect x="54" y="24" width="362" height="296" rx="18" fill="url(#ig-tile)" stroke="var(--field-art-outline, #E0F9CE)" stroke-opacity=".7"/>
+    <path d="M54 218c76-103 125-108 180-43 43 51 95 24 182-88v233H54V218Z" fill="var(--field-art-mountain, #214B43)" fill-opacity=".75"/>
+    <path d="M54 261c90-68 156-64 214-12 50 45 93 30 148-16v87H54v-59Z" fill="var(--field-art-mountain-front, #153D38)" fill-opacity=".84"/>
+    <circle cx="296" cy="98" r="39" fill="var(--field-art-sun, #ECF6CE)" fill-opacity=".86"/>
+    <path d="m93 180 62-67 58 63 31-34 78 85" stroke="var(--field-art-outline, #E9F8D7)" stroke-opacity=".72" stroke-width="3"/>
+    <rect x="54" y="24" width="362" height="296" rx="18" stroke="var(--field-art-outline, #E9F8D7)" stroke-opacity=".65"/>
+  </g>
+  <g fill="var(--field-art-line, #C4F578)"><circle cx="570" cy="90" r="3"/><circle cx="1110" cy="340" r="3"/><circle cx="480" cy="340" r="2"/><circle cx="1080" cy="45" r="2"/></g>
+  <path d="M513 91h60m-30-30v60M1110 300v80m-40-40h80" stroke="var(--field-art-line, #C4F578)" stroke-opacity=".45"/>
+</svg>

@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Task-Agnostic Guided Feature Expansion for Class-Incremental Learning"><meta name="theme-color" content="#101310"><script>
+      document.documentElement.classList.add('js-enabled');
+    </script><script>// Runs in the head before first paint, shared by every page.
+(() => {
+  const storageKey = 'bwnzheng-theme';
+  const system = window.matchMedia('(prefers-color-scheme: dark)');
+  const normalize = (value) => (['light', 'dark'].includes(value) ? value : 'system');
+  let preference = 'system';
+  try {
+    preference = normalize(localStorage.getItem(storageKey));
+  } catch {
+    // A blocked storage API should not prevent theme switching.
+  }
+  const apply = () => {
+    const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = preference;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#101310' : '#e9eef5');
+    const select = document.getElementById('theme-select');
+    if (select) select.value = preference;
+  };
+  apply();
+  system.addEventListener('change', () => {
+    if (preference === 'system') apply();
+  });
+  window.addEventListener('storage', (event) => {
+    if (event.key === storageKey || event.key === null) {
+      preference = normalize(event.newValue);
+      apply();
+    }
+  });
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      apply();
+      document.getElementById('theme-select')?.addEventListener('change', (event) => {
+        preference = normalize(event.target.value);
+        try {
+          if (preference === 'system') localStorage.removeItem(storageKey);
+          else localStorage.setItem(storageKey, preference);
+        } catch {
+          // Keep the choice active in this page even when persistence is unavailable.
+        }
+        apply();
+      });
+    },
+    { once: true },
+  );
+})();
+</script><meta name="generator" content="Astro v7.3.5"><title>tagfex · Bowen Zheng</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://bwnzheng.github.io/papers/tagfex/"><meta property="og:title" content="tagfex · Bowen Zheng"><meta property="og:description" content="Task-Agnostic Guided Feature Expansion for Class-Incremental Learning"><meta property="og:type" content="website"><meta property="og:url" content="https://bwnzheng.github.io/papers/tagfex/"><link rel="stylesheet" href="/_astro/BaseLayout.BLHPv5Hu.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="/" aria-label="Bowen Zheng home">bwnzheng<span>↗</span><span class="wordmark-caption">BOWEN ZHENG<br>RESEARCH & BEYOND</span></a><div class="header-controls"><nav aria-label="Main navigation"><a href="/">主页 / Home</a><a href="/research/" aria-current="page">研究 / Research</a><a href="/resume/">简历 / Resume</a><a href="/blog/">思考 / Thoughts</a></nav><label class="theme-picker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"></path></svg><span class="sr-only">主题 / Color theme</span><select id="theme-select" aria-label="主题 / Color theme"><option value="system">跟随系统 / System</option><option value="light">日间 / Light</option><option value="dark">夜间 / Dark</option></select><script>
+            // Restore the choice as soon as the control is parsed, before first paint.
+            document.getElementById('theme-select').value =
+              document.documentElement.dataset.themePreference || 'system';
+          </script></label></div></header><main id="main"><article class="wrap project-detail"><a class="text-link" href="/resume/#publications" data-back-link>← 返回 / Back</a><p class="eyebrow"><span>CVPR 2025</span> · <span>CCF-A</span> · <span>Poster</span> · Conference</p><h1>Task-Agnostic Guided Feature Expansion for Class-Incremental Learning</h1><p class="authors">Bowen Zheng, Da-Wei Zhou, Han-Jia Ye, De-Chuan Zhan</p><div class="paper-links"><a class="button" href="https://openaccess.thecvf.com/content/CVPR2025/html/Zheng_Task-Agnostic_Guided_Feature_Expansion_for_Class-Incremental_Learning_CVPR_2025_paper.html" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Paper ↗
+        </a><a class="button" href="https://arxiv.org/abs/2503.00823" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Arxiv ↗
+        </a><a class="button" href="https://github.com/bwnzheng/TagFex_CVPR2025" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Code ↗
+        </a></div><div class="detail-image"><img src="/_astro/tagfex.Cq1zwO_4_1Tz8IA.svg" alt="tagfex research overview" sizes="(max-width: 760px) 90vw, 1000px" loading="lazy" decoding="async" width="1440" height="716"></div><h2 class="bilingual-title"><span lang="zh">简介</span><span class="title-en" lang="en">Summary<span class="accent">.</span></span></h2><p class="lead">Machine Learning, Continual Learning, Unsupervised Learning, Feature Collision, Feature Expansion.</p></article></main><footer class="wrap site-footer"><div><a class="footer-name" href="/"><span lang="zh">郑博文</span><span lang="en">Bowen Zheng</span></a></div><div class="footer-links"><a href="mailto:zhengbw@lamda.nju.edu.cn">Email ↗</a><a href="https://github.com/bwnzheng" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">LAMDA ↗</a></div><div class="footer-bottom"><a href="/credits/">致谢 / Credits ↗</a><div class="footer-editing"><span lang="zh">最后编辑</span> / <span lang="en">Last Edited</span> :<time datetime="2026-10-07">2026 / 10 / 7</time></div></div></footer><script>(() => {
+  // This script restores the position; disable competing browser restoration.
+  history.scrollRestoration = 'manual';
+  const storageKey = `page-state:${location.pathname}${location.search}`;
+  const panels = [...document.querySelectorAll('details[id]')];
+  const entry = history.state?.pageNavigation;
+  let snapshot = entry;
+  if (!snapshot) {
+    try {
+      snapshot = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
+    } catch {
+      // History restoration still works when session storage is unavailable.
+    }
+  }
+
+  const sameSiteSource = (value) => {
+    if (!value) return null;
+    try {
+      const source = new URL(value, location.href);
+      return source.origin === location.origin &&
+        (source.pathname !== location.pathname || source.search !== location.search)
+        ? source.href
+        : null;
+    } catch {
+      return null;
+    }
+  };
+  // Keep the source on this history entry so a refresh cannot change it.
+  const returnTo = sameSiteSource(entry?.returnTo ?? document.referrer);
+  history.replaceState({ ...history.state, pageNavigation: { ...snapshot, returnTo } }, '');
+
+  const openHashTarget = () => {
+    let target;
+    try {
+      target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    } catch {
+      return null;
+    }
+    for (
+      let panel = target?.closest('details');
+      panel;
+      panel = panel.parentElement?.closest('details')
+    ) {
+      panel.open = true;
+    }
+    return target;
+  };
+  const restore = () => {
+    const saved = history.state?.pageNavigation;
+    if (Array.isArray(saved?.open)) {
+      panels.forEach((panel) => {
+        panel.open = saved.open.includes(panel.id);
+      });
+    }
+    return openHashTarget();
+  };
+  let ready = false;
+  let saveFrame = 0;
+  const save = () => {
+    cancelAnimationFrame(saveFrame);
+    saveFrame = 0;
+    if (!ready) return;
+    const saved = {
+      returnTo,
+      open: panels.filter((panel) => panel.open).map((panel) => panel.id),
+      scrollY: window.scrollY,
+    };
+    history.replaceState({ ...history.state, pageNavigation: saved }, '');
+    try {
+      // Also restore when a return link loads the source as a new history entry.
+      sessionStorage.setItem(
+        storageKey,
+        JSON.stringify({ open: saved.open, scrollY: saved.scrollY }),
+      );
+    } catch {
+      // Storage restrictions must not prevent normal navigation.
+    }
+  };
+  restore();
+  panels.forEach((panel) => panel.addEventListener('toggle', save));
+  document.addEventListener('click', save, { capture: true });
+  // Update the history entry while scrolling: pagehide may be too late for reload.
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ready && !saveFrame) saveFrame = requestAnimationFrame(save);
+    },
+    { passive: true },
+  );
+  window.addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) save();
+  });
+  window.addEventListener('hashchange', openHashTarget);
+  window.addEventListener('pageshow', () => {
+    ready = false;
+    cancelAnimationFrame(saveFrame);
+    saveFrame = 0;
+    const target = restore();
+    const saved = history.state?.pageNavigation;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        if (typeof saved?.scrollY === 'number') {
+          window.scrollTo({ top: saved.scrollY, behavior: 'instant' });
+        } else {
+          target?.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+        ready = true;
+      }),
+    );
+  });
+
+  document.querySelectorAll('[data-back-link]').forEach((link) => {
+    if (!returnTo) return;
+    link.href = returnTo;
+    link.addEventListener('click', (event) => {
+      if (
+        event.button ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        history.length < 2
+      )
+        return;
+      event.preventDefault();
+      history.back();
+    });
+  });
+})();
+</script></body></html>

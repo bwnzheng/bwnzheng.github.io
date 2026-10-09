@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Bowen Zheng, PhD candidate at LAMDA, Nanjing University. Research in continual learning, generative models, and agentic image generation."><meta name="theme-color" content="#101310"><script>
+      document.documentElement.classList.add('js-enabled');
+    </script><script>// Runs in the head before first paint, shared by every page.
+(() => {
+  const storageKey = 'bwnzheng-theme';
+  const system = window.matchMedia('(prefers-color-scheme: dark)');
+  const normalize = (value) => (['light', 'dark'].includes(value) ? value : 'system');
+  let preference = 'system';
+  try {
+    preference = normalize(localStorage.getItem(storageKey));
+  } catch {
+    // A blocked storage API should not prevent theme switching.
+  }
+  const apply = () => {
+    const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = preference;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#101310' : '#e9eef5');
+    const select = document.getElementById('theme-select');
+    if (select) select.value = preference;
+  };
+  apply();
+  system.addEventListener('change', () => {
+    if (preference === 'system') apply();
+  });
+  window.addEventListener('storage', (event) => {
+    if (event.key === storageKey || event.key === null) {
+      preference = normalize(event.newValue);
+      apply();
+    }
+  });
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      apply();
+      document.getElementById('theme-select')?.addEventListener('change', (event) => {
+        preference = normalize(event.target.value);
+        try {
+          if (preference === 'system') localStorage.removeItem(storageKey);
+          else localStorage.setItem(storageKey, preference);
+        } catch {
+          // Keep the choice active in this page even when persistence is unavailable.
+        }
+        apply();
+      });
+    },
+    { once: true },
+  );
+})();
+</script><meta name="generator" content="Astro v7.3.5"><title>简历 · Resume · Bowen Zheng</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="canonical" href="https://bwnzheng.github.io/resume/"><meta property="og:title" content="简历 · Resume · Bowen Zheng"><meta property="og:description" content="Bowen Zheng, PhD candidate at LAMDA, Nanjing University. Research in continual learning, generative models, and agentic image generation."><meta property="og:type" content="website"><meta property="og:url" content="https://bwnzheng.github.io/resume/"><link rel="stylesheet" href="/_astro/BaseLayout.BLHPv5Hu.css"><style>.page-heading-with-quote[data-astro-cid-s7fn5vct]{max-width:none}.page-heading-title-row[data-astro-cid-s7fn5vct]{justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px;display:flex}.page-heading-title-row[data-astro-cid-s7fn5vct] h1[data-astro-cid-s7fn5vct]{flex-shrink:0;margin-bottom:0}.page-heading-quote[data-astro-cid-s7fn5vct]{margin:0;text-align:right;max-width:420px;color:var(--muted);margin-inline-start:auto;line-height:1.8}.page-heading-quote[data-astro-cid-s7fn5vct] p[data-astro-cid-s7fn5vct]{margin:0}.page-heading-quote[data-astro-cid-s7fn5vct]>[data-astro-cid-s7fn5vct][lang=zh]{letter-spacing:.06em;font-family:Kaiti SC,STKaiti,KaiTi,楷体,serif;font-size:clamp(20px,2vw,24px)}.page-heading-quote[data-astro-cid-s7fn5vct]>[data-astro-cid-s7fn5vct][lang=en]{font-synthesis:style;margin-top:6px;font-family:Georgia,Times New Roman,serif;font-size:16px;font-style:italic;line-height:1.6}.page-heading-long-quote[data-astro-cid-s7fn5vct] .page-heading-quote[data-astro-cid-s7fn5vct]{max-width:560px}.quote-author[data-astro-cid-s7fn5vct]{flex-wrap:wrap;justify-content:flex-end;gap:0 8px;margin-top:12px;font-size:13px;line-height:1.6;display:flex}@media (width>=701px) and (width<=1000px){.page-heading-long-quote[data-astro-cid-s7fn5vct]{flex-direction:column;align-items:flex-start}}@media (width<=700px){.page-heading-title-row[data-astro-cid-s7fn5vct]{flex-direction:column;align-items:flex-start;gap:16px}.page-heading-quote[data-astro-cid-s7fn5vct]{text-align:left;margin-inline-start:0}.quote-author[data-astro-cid-s7fn5vct]{justify-content:flex-start}}
+.eyebrow[data-astro-cid-3xih677i]>.expected-note[data-astro-cid-3xih677i]{color:var(--muted);white-space:nowrap;text-transform:none}.experience-heading[data-astro-cid-3xih677i]{flex-wrap:wrap;align-items:baseline;gap:6px 16px;display:flex}.experience-heading[data-astro-cid-3xih677i] .inline-en[data-astro-cid-3xih677i]{font-size:.7em;font-weight:400}.experience-heading[data-astro-cid-3xih677i] .major[data-astro-cid-3xih677i]{color:var(--muted);font-size:14px;font-weight:400}.education-label[data-astro-cid-3xih677i]{flex-wrap:wrap;align-items:baseline;gap:8px;display:inline-flex}.timeline[data-astro-cid-3xih677i] article[data-astro-cid-3xih677i]>.location[data-astro-cid-3xih677i]{white-space:nowrap;text-align:right;grid-area:auto;justify-content:flex-end;align-items:baseline;gap:6px;display:flex;position:absolute;bottom:30px;left:auto;right:0}.location-icon[data-astro-cid-3xih677i]{width:13px;height:13px;color:var(--accent);flex-shrink:0;align-self:flex-start}.experience-description[data-astro-cid-3xih677i]:after{content:"";width:180px;height:1em;display:inline-block}@media (width<=760px){.timeline[data-astro-cid-3xih677i] article[data-astro-cid-3xih677i]>.location[data-astro-cid-3xih677i]{bottom:24px}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="/" aria-label="Bowen Zheng home">bwnzheng<span>↗</span><span class="wordmark-caption">BOWEN ZHENG<br>RESEARCH & BEYOND</span></a><div class="header-controls"><nav aria-label="Main navigation"><a href="/">主页 / Home</a><a href="/research/">研究 / Research</a><a href="/resume/" aria-current="page">简历 / Resume</a><a href="/blog/">思考 / Thoughts</a></nav><label class="theme-picker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"></path></svg><span class="sr-only">主题 / Color theme</span><select id="theme-select" aria-label="主题 / Color theme"><option value="system">跟随系统 / System</option><option value="light">日间 / Light</option><option value="dark">夜间 / Dark</option></select><script>
+            // Restore the choice as soon as the control is parsed, before first paint.
+            document.getElementById('theme-select').value =
+              document.documentElement.dataset.themePreference || 'system';
+          </script></label></div></header><main id="main"><div class="wrap"><header class="page-heading page-heading-with-quote" data-astro-cid-s7fn5vct><p class="eyebrow" data-astro-cid-s7fn5vct><span data-astro-cid-s7fn5vct>02 /</span><span lang="zh" data-astro-cid-s7fn5vct>简历</span><span lang="en" data-astro-cid-s7fn5vct>RESUME</span></p><div class="page-heading-title-row page-heading-long-quote" data-astro-cid-s7fn5vct><h1 class="bilingual-title" data-astro-cid-s7fn5vct><span lang="zh" data-astro-cid-s7fn5vct>经历与背景</span><span class="title-en" lang="en" data-astro-cid-s7fn5vct>Resume</span></h1><blockquote class="page-heading-quote" data-astro-cid-s7fn5vct><p lang="zh" data-astro-cid-s7fn5vct>「光锥之内就是命运。」</p><p lang="en" data-astro-cid-s7fn5vct>“Everything inside the light cone is destiny.”</p><footer class="quote-author" data-astro-cid-s7fn5vct><span lang="zh" data-astro-cid-s7fn5vct>—— 《黑暗森林》</span><span lang="en" data-astro-cid-s7fn5vct>The Dark Forest</span></footer></blockquote></div><p class="lead" lang="zh" data-astro-cid-s7fn5vct>教育背景、实习经历、论文成果，以及助教工作。</p><p class="lead" lang="en" data-astro-cid-s7fn5vct>Education, internships, publications, and teaching experience.</p></header><div class="hero-actions"><a class="button" href="mailto:zhengbw@lamda.nju.edu.cn">索取简历 / Request CV ↗</a></div><section class="section compact"><h2 class="bilingual-title"><span lang="zh">教育背景</span><span class="title-en" lang="en">Education<span class="accent">.</span></span></h2><div class="timeline" data-astro-cid-3xih677i><article data-astro-cid-3xih677i><div class="experience-grid" data-astro-cid-3xih677i><p class="eyebrow" data-astro-cid-3xih677i>2023 — 2027<span class="expected-note" data-astro-cid-3xih677i>（<span lang="zh" data-astro-cid-3xih677i>预计</span> <span lang="en" data-astro-cid-3xih677i>expected</span>）</span></p><div data-astro-cid-3xih677i><h3 class="experience-heading" data-astro-cid-3xih677i><span class="education-label" lang="zh" data-astro-cid-3xih677i><span class="degree" data-astro-cid-3xih677i>博士</span> <span class="major" data-astro-cid-3xih677i>计算机科学与技术</span></span><span class="education-label inline-en" lang="en" data-astro-cid-3xih677i><span class="degree" data-astro-cid-3xih677i>PhD</span> <span class="major" data-astro-cid-3xih677i>Computer Science</span></span></h3><a class="inline-bilingual" data-astro-cid-3xih677i="true" href="https://ai.nju.edu.cn/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh" data-astro-cid-3xih677i>南京大学</span> <span lang="en" data-astro-cid-3xih677i>Nanjing University ↗</span></a><p class="experience-description inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>人工智能学院 · LAMDA 研究组</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>School of Artificial Intelligence · LAMDA Group</span></p></div></div><span class="location" data-astro-cid-3xih677i><svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-astro-cid-3xih677i><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" data-astro-cid-3xih677i></path><circle cx="12" cy="10" r="3" data-astro-cid-3xih677i></circle></svg><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>中国南京</span> <span lang="en" data-astro-cid-3xih677i>Nanjing, China</span></span></span></article><article data-astro-cid-3xih677i><div class="experience-grid" data-astro-cid-3xih677i><p class="eyebrow" data-astro-cid-3xih677i>2020 — 2023</p><div data-astro-cid-3xih677i><h3 class="experience-heading" data-astro-cid-3xih677i><span class="education-label" lang="zh" data-astro-cid-3xih677i><span class="degree" data-astro-cid-3xih677i>硕士</span> <span class="major" data-astro-cid-3xih677i>计算机科学与技术</span></span><span class="education-label inline-en" lang="en" data-astro-cid-3xih677i><span class="degree" data-astro-cid-3xih677i>Master</span> <span class="major" data-astro-cid-3xih677i>Computer Science</span></span></h3><a class="inline-bilingual" data-astro-cid-3xih677i="true" href="https://ai.nju.edu.cn/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh" data-astro-cid-3xih677i>南京大学</span> <span lang="en" data-astro-cid-3xih677i>Nanjing University ↗</span></a><p class="experience-description inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>人工智能学院</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>School of Artificial Intelligence</span></p></div></div><span class="location" data-astro-cid-3xih677i><svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-astro-cid-3xih677i><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" data-astro-cid-3xih677i></path><circle cx="12" cy="10" r="3" data-astro-cid-3xih677i></circle></svg><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>中国南京</span> <span lang="en" data-astro-cid-3xih677i>Nanjing, China</span></span></span></article><article data-astro-cid-3xih677i><div class="experience-grid" data-astro-cid-3xih677i><p class="eyebrow" data-astro-cid-3xih677i>2016 — 2020</p><div data-astro-cid-3xih677i><h3 class="experience-heading" data-astro-cid-3xih677i><span class="education-label" lang="zh" data-astro-cid-3xih677i><span class="degree" data-astro-cid-3xih677i>本科</span> <span class="major" data-astro-cid-3xih677i>计算机科学与技术</span></span><span class="education-label inline-en" lang="en" data-astro-cid-3xih677i><span class="degree" data-astro-cid-3xih677i>Bachelor</span> <span class="major" data-astro-cid-3xih677i>Computer Science</span></span></h3><a class="inline-bilingual" data-astro-cid-3xih677i="true" href="https://www.yingcai.uestc.edu.cn/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh" data-astro-cid-3xih677i>电子科技大学</span> <span lang="en" data-astro-cid-3xih677i>University of Electronic Science and Technology of China (UESTC) ↗</span></a><p class="experience-description inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>英才实验学院</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>Yingcai Honors College</span></p></div></div><span class="location" data-astro-cid-3xih677i><svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-astro-cid-3xih677i><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" data-astro-cid-3xih677i></path><circle cx="12" cy="10" r="3" data-astro-cid-3xih677i></circle></svg><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>中国成都</span> <span lang="en" data-astro-cid-3xih677i>Chengdu, China</span></span></span></article></div></section><section class="section compact"><h2 class="bilingual-title"><span lang="zh">实习经历</span><span class="title-en" lang="en">Internships<span class="accent">.</span></span></h2><div class="timeline" data-astro-cid-3xih677i><article data-astro-cid-3xih677i><div class="experience-grid" data-astro-cid-3xih677i><p class="eyebrow" data-astro-cid-3xih677i>2026.05 — 2026.11<span class="expected-note" data-astro-cid-3xih677i>（<span lang="zh" data-astro-cid-3xih677i>预计</span> <span lang="en" data-astro-cid-3xih677i>expected</span>）</span></p><div data-astro-cid-3xih677i><h3 class="experience-heading" data-astro-cid-3xih677i><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>人工智能模型工程师</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>AI Model Engineer</span></span></h3><a class="inline-bilingual" data-astro-cid-3xih677i="true" href="https://noahlab.com.hk/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh" data-astro-cid-3xih677i>华为诺亚方舟实验室</span> <span lang="en" data-astro-cid-3xih677i>Huawei Noah’s Ark Lab ↗</span></a><p class="experience-description inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>图像生成后训练、智能体图像生成、同策略蒸馏。</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>Image generation post-training, agentic image generation, on-policy distillation.</span></p></div></div><span class="location" data-astro-cid-3xih677i><svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-astro-cid-3xih677i><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" data-astro-cid-3xih677i></path><circle cx="12" cy="10" r="3" data-astro-cid-3xih677i></circle></svg><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>中国上海</span> <span lang="en" data-astro-cid-3xih677i>Shanghai, China</span></span></span></article><article data-astro-cid-3xih677i><div class="experience-grid" data-astro-cid-3xih677i><p class="eyebrow" data-astro-cid-3xih677i>2025.02 — 2026.02</p><div data-astro-cid-3xih677i><h3 class="experience-heading" data-astro-cid-3xih677i><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>人工智能工程师</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>AI Engineer</span></span></h3><a class="inline-bilingual" data-astro-cid-3xih677i="true" href="https://consumer.huawei.com/cn/mobileservices/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh" data-astro-cid-3xih677i>华为终端云服务部 · 小艺</span> <span lang="en" data-astro-cid-3xih677i>Huawei Mobile Services · Xiaoyi ↗</span></a><p class="experience-description inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>多模态大语言模型与统一图像生成模型。</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>Multimodal LLMs and unified image generation models.</span></p></div></div><span class="location" data-astro-cid-3xih677i><svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-astro-cid-3xih677i><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" data-astro-cid-3xih677i></path><circle cx="12" cy="10" r="3" data-astro-cid-3xih677i></circle></svg><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>中国南京</span> <span lang="en" data-astro-cid-3xih677i>Nanjing, China</span></span></span></article><article data-astro-cid-3xih677i><div class="experience-grid" data-astro-cid-3xih677i><p class="eyebrow" data-astro-cid-3xih677i>2022.07 — 2022.10</p><div data-astro-cid-3xih677i><h3 class="experience-heading" data-astro-cid-3xih677i><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>计算机视觉工程师</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>Computer Vision Engineer</span></span></h3><a class="inline-bilingual" data-astro-cid-3xih677i="true" href="https://www.4paradigm.com/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh" data-astro-cid-3xih677i>第四范式</span> <span lang="en" data-astro-cid-3xih677i>4Paradigm ↗</span></a><p class="experience-description inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>伪造检测、文档图像与光学字符识别。</span> <span class="inline-en" lang="en" data-astro-cid-3xih677i>Forgery detection, document images, optical character recognition.</span></p></div></div><span class="location" data-astro-cid-3xih677i><svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-astro-cid-3xih677i><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" data-astro-cid-3xih677i></path><circle cx="12" cy="10" r="3" data-astro-cid-3xih677i></circle></svg><span class="inline-bilingual" data-astro-cid-3xih677i><span lang="zh" data-astro-cid-3xih677i>中国北京</span> <span lang="en" data-astro-cid-3xih677i>Beijing, China</span></span></span></article></div></section><section id="publications" class="section compact"><h2 class="bilingual-title"><span lang="zh">论文成果</span><span class="title-en" lang="en">Publications<span class="accent">.</span></span></h2><p class="inline-bilingual"><span lang="zh">* 表示共同第一作者。</span> <span lang="en">* denotes equal contribution.</span></p><div class="publication-browser"><div class="publication-list"><article class="publication" data-year="2026" data-type="Report" data-search="boogu-image-0.1: boosting open-source unified multimodal understanding and generation guoxuan chen, chufeng xiao, haoran yang, siyue xie, binxiao huang, ming zhang, cheuk him chau, xinyu fu, yingzhao lian, tom s.y. li, jintao lin, bowen dong, zian qian, yuhao liu, yuxuan hu, weikang shi, bin zou, bowen zheng, haoxuan che, chang chen, yuyang he, heyang sun, tianyu huang, chong hou choi, cheng gong, han shi, haoli bai, xihui liu, hongsheng li, qifeng chen, chao huang, rui liu, chenyang lei a competitive open-source image generation and editing model. arxiv july, 2026  "><a class="publication-image" href="/papers/boogu-image/"><img src="/_astro/boogu-image.BDTxETuF_Z9L20n.webp" srcset="/_astro/boogu-image.BDTxETuF_aqdbP.webp 360w, /_astro/boogu-image.BDTxETuF_Z9L20n.webp 720w" alt="boogu-image research overview" sizes="(max-width: 760px) 90vw, 600px" loading="lazy" decoding="async" width="720" height="720"></a><div><p class="eyebrow"><span>Arxiv July, 2026</span> · Report</p><h3><a href="/papers/boogu-image/">Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation</a></h3><p class="authors">Guoxuan Chen, Chufeng Xiao, Haoran Yang, Siyue Xie, Binxiao Huang, Ming Zhang, Cheuk Him Chau, Xinyu Fu, Yingzhao Lian, Tom S.Y. Li, Jintao Lin, Bowen Dong, Zian Qian, Yuhao Liu, Yuxuan Hu, Weikang Shi, Bin Zou, <strong>Bowen Zheng</strong>, Haoxuan Che, Chang Chen, Yuyang He, Heyang Sun, Tianyu Huang, Chong Hou Choi, Cheng Gong, Han Shi, Haoli Bai, Xihui Liu, Hongsheng Li, Qifeng Chen, Chao Huang, Rui Liu, Chenyang Lei</p><div class="paper-links"><a href="https://arxiv.org/abs/2607.13125" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Arxiv ↗
+            </a><a href="https://github.com/boogu-project/Boogu-Image" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Code ↗
+            </a><a href="https://huggingface.co/Boogu" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Huggingface ↗
+            </a><a href="/papers/boogu-image/">Details →</a></div></div></article><article class="publication" data-year="2026" data-type="Conference" data-search="mdmr-bench: a multi-dimensional benchmark for multi-reference image generation bowen zheng*, jintao lin*, chang-heng yi, haoran yang, binxiao huang, chenyang lei, rui liu, xihui liu multi-reference image generation, evaluation benchmark, checklist-based evaluation. neurips 2026 ed track ccf-a poster"><a class="publication-image" href="/papers/mdmr-bench/"><img src="/_astro/mdmr-bench.DdKiKi-2_Z1JyHmh.webp" srcset="/_astro/mdmr-bench.DdKiKi-2_Z1KBf66.webp 360w, /_astro/mdmr-bench.DdKiKi-2_Z1JyHmh.webp 720w" alt="mdmr-bench research overview" sizes="(max-width: 760px) 90vw, 600px" loading="lazy" decoding="async" width="720" height="377"></a><div><p class="eyebrow"><span>NeurIPS 2026 ED Track</span> · <span>CCF-A</span> · <span>Poster</span> · Conference</p><h3><a href="/papers/mdmr-bench/">MDMR-Bench: A Multi-Dimensional Benchmark for Multi-Reference Image Generation</a></h3><p class="authors"><strong>Bowen Zheng</strong>*, Jintao Lin*, Chang-Heng Yi, HAORAN YANG, Binxiao Huang, Chenyang Lei, Rui Liu, Xihui Liu</p><div class="paper-links"><a href="/papers/mdmr-bench/">Details →</a></div></div></article><article class="publication" data-year="2026" data-type="Journal" data-search="bi-compatible task-agnostic feature augmentation for expansion-based class-incremental learning bowen zheng, zijun shen, da-wei zhou, han-jia ye, de-chuan zhan machine learning, continual learning, bi-compatible continual learning ijcv 2026 ccf-a "><a class="publication-image" href="/papers/bitfea/"><img src="/_astro/bitfea.6OL5MgjG_1FLAN7.webp" srcset="/_astro/bitfea.6OL5MgjG_Z1xOLQ2.webp 360w, /_astro/bitfea.6OL5MgjG_1FLAN7.webp 720w" alt="bitfea research overview" sizes="(max-width: 760px) 90vw, 600px" loading="lazy" decoding="async" width="720" height="275"></a><div><p class="eyebrow"><span>IJCV 2026</span> · <span>CCF-A</span> · Journal</p><h3><a href="/papers/bitfea/">Bi-Compatible Task-Agnostic Feature Augmentation for Expansion-Based Class-Incremental Learning</a></h3><p class="authors"><strong>Bowen Zheng</strong>, Zijun Shen, Da-Wei Zhou, Han-Jia Ye, De-Chuan Zhan</p><div class="paper-links"><a href="https://link.springer.com/article/10.1007/s11263-026-02949-2" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Paper ↗
+            </a><a href="https://github.com/bwnzheng/BitFea_IJCV2026" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Code ↗
+            </a><a href="/papers/bitfea/">Details →</a></div></div></article><article class="publication" data-year="2025" data-type="Conference" data-search="task-agnostic guided feature expansion for class-incremental learning bowen zheng, da-wei zhou, han-jia ye, de-chuan zhan machine learning, continual learning, unsupervised learning, feature collision, feature expansion. cvpr 2025 ccf-a poster"><a class="publication-image" href="/papers/tagfex/"><img src="/_astro/tagfex.Cq1zwO_4_Z2v5W92.svg" alt="tagfex research overview" sizes="(max-width: 760px) 90vw, 600px" loading="lazy" decoding="async" width="720" height="358"></a><div><p class="eyebrow"><span>CVPR 2025</span> · <span>CCF-A</span> · <span>Poster</span> · Conference</p><h3><a href="/papers/tagfex/">Task-Agnostic Guided Feature Expansion for Class-Incremental Learning</a></h3><p class="authors"><strong>Bowen Zheng</strong>, Da-Wei Zhou, Han-Jia Ye, De-Chuan Zhan</p><div class="paper-links"><a href="https://openaccess.thecvf.com/content/CVPR2025/html/Zheng_Task-Agnostic_Guided_Feature_Expansion_for_Class-Incremental_Learning_CVPR_2025_paper.html" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Paper ↗
+            </a><a href="https://arxiv.org/abs/2503.00823" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Arxiv ↗
+            </a><a href="https://github.com/bwnzheng/TagFex_CVPR2025" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Code ↗
+            </a><a href="/papers/tagfex/">Details →</a></div></div></article><article class="publication" data-year="2024" data-type="Conference" data-search="multi-layer rehearsal feature augmentation for class-incremental learning bowen zheng, da-wei zhou, han-jia ye, de-chuan zhan machine learning, continual learning, margin theory, feature augmentation, adversarial training. icml 2024 ccf-a poster"><a class="publication-image" href="/papers/mrfa/"><img src="/_astro/mrfa.DoHRffhN_Z1atg3b.webp" srcset="/_astro/mrfa.DoHRffhN_23jA7V.webp 360w, /_astro/mrfa.DoHRffhN_Z1atg3b.webp 720w" alt="mrfa research overview" sizes="(max-width: 760px) 90vw, 600px" loading="lazy" decoding="async" width="720" height="329"></a><div><p class="eyebrow"><span>ICML 2024</span> · <span>CCF-A</span> · <span>Poster</span> · Conference</p><h3><a href="/papers/mrfa/">Multi-layer Rehearsal Feature Augmentation for Class-Incremental Learning</a></h3><p class="authors"><strong>Bowen Zheng</strong>, Da-Wei Zhou, Han-Jia Ye, De-Chuan Zhan</p><div class="paper-links"><a href="https://icml.cc/virtual/2024/poster/33673" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Paper ↗
+            </a><a href="https://github.com/bwnzheng/MRFA_ICML2024" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Code ↗
+            </a><a href="/papers/mrfa/">Details →</a></div></div></article><article class="publication" data-year="2023" data-type="Conference" data-search="preserving locality in vision transformers for class incremental learning bowen zheng, da-wei zhou, han-jia ye, de-chuan zhan machine learning, continual learning, vision transformer, locality, attention mechanism. icme 2023 ccf-b oral"><a class="publication-image" href="/papers/lpa/"><img src="/_astro/lpa.CZNqnVDi_Z20rfco.webp" srcset="/_astro/lpa.CZNqnVDi_IOQy9.webp 360w, /_astro/lpa.CZNqnVDi_Z20rfco.webp 720w" alt="lpa research overview" sizes="(max-width: 760px) 90vw, 600px" loading="lazy" decoding="async" width="720" height="460"></a><div><p class="eyebrow"><span>ICME 2023</span> · <span>CCF-B</span> · <span>Oral</span> · Conference</p><h3><a href="/papers/lpa/">Preserving Locality in Vision Transformers for Class Incremental Learning</a></h3><p class="authors"><strong>Bowen Zheng</strong>, Da-Wei Zhou, Han-Jia Ye, De-Chuan Zhan</p><div class="paper-links"><a href="https://ieeexplore.ieee.org/document/10219622" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Paper ↗
+            </a><a href="https://arxiv.org/abs/2304.06971" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Arxiv ↗
+            </a><a href="https://github.com/bwnzheng/LPA_ICME2023" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Code ↗
+            </a><a href="/images/icme23/slides.pdf">Slides ↗
+            </a><a href="/papers/lpa/">Details →</a></div></div></article></div></div></section><section class="section compact"><h2 class="bilingual-title"><span lang="zh">助教经历</span><span class="title-en" lang="en">Teaching<span class="accent">.</span></span></h2><div class="teaching-list"><article><span class="eyebrow">2024 春季 Spring</span><h3 class="teaching-title inline-bilingual"><span lang="zh">数学分析 II</span> <span class="inline-en" lang="en">Mathematical Analysis II</span></h3></article><article><span class="eyebrow">2023 秋季 Fall</span><h3 class="teaching-title inline-bilingual"><a class="inline-bilingual" href="https://www.lamda.nju.edu.cn/aml23fall/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><span lang="zh">高级机器学习</span> <span class="inline-en" lang="en">Advanced Machine Learning ↗</span></a></h3></article><article><span class="eyebrow">2021 春季 秋季 Spring &amp; Fall</span><h3 class="teaching-title inline-bilingual"><span lang="zh">离散数学</span> <span class="inline-en" lang="en">Discrete Mathematics</span></h3></article></div></section><section class="section compact"><h2 class="bilingual-title"><span lang="zh">联系方式</span><span class="title-en" lang="en">Contact<span class="accent">.</span></span></h2><p class="bilingual-copy"><span lang="zh">南京大学仙林校区人工智能学院 A333 室</span><span lang="en">Room A333, School of Artificial Intelligence, Xianlin Campus, Nanjing University</span></p><p class="bilingual-copy"><span lang="zh">中国江苏省南京市栖霞区仙林大道 163 号，邮编 210023</span><span lang="en">163 Xianlin Avenue, Qixia District, Nanjing 210023, China</span></p><a class="text-link" href="mailto:zhengbw@lamda.nju.edu.cn">zhengbw@lamda.nju.edu.cn ↗</a></section></div></main><footer class="wrap site-footer"><div><a class="footer-name" href="/"><span lang="zh">郑博文</span><span lang="en">Bowen Zheng</span></a></div><div class="footer-links"><a href="mailto:zhengbw@lamda.nju.edu.cn">Email ↗</a><a href="https://github.com/bwnzheng" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.lamda.nju.edu.cn/" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">LAMDA ↗</a></div><div class="footer-bottom"><a href="/credits/">致谢 / Credits ↗</a><div class="footer-editing"><span lang="zh">最后编辑</span> / <span lang="en">Last Edited</span> :<time datetime="2026-10-07">2026 / 10 / 7</time></div></div></footer><script>(() => {
+  // This script restores the position; disable competing browser restoration.
+  history.scrollRestoration = 'manual';
+  const storageKey = `page-state:${location.pathname}${location.search}`;
+  const panels = [...document.querySelectorAll('details[id]')];
+  const entry = history.state?.pageNavigation;
+  let snapshot = entry;
+  if (!snapshot) {
+    try {
+      snapshot = JSON.parse(sessionStorage.getItem(storageKey) || 'null');
+    } catch {
+      // History restoration still works when session storage is unavailable.
+    }
+  }
+
+  const sameSiteSource = (value) => {
+    if (!value) return null;
+    try {
+      const source = new URL(value, location.href);
+      return source.origin === location.origin &&
+        (source.pathname !== location.pathname || source.search !== location.search)
+        ? source.href
+        : null;
+    } catch {
+      return null;
+    }
+  };
+  // Keep the source on this history entry so a refresh cannot change it.
+  const returnTo = sameSiteSource(entry?.returnTo ?? document.referrer);
+  history.replaceState({ ...history.state, pageNavigation: { ...snapshot, returnTo } }, '');
+
+  const openHashTarget = () => {
+    let target;
+    try {
+      target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    } catch {
+      return null;
+    }
+    for (
+      let panel = target?.closest('details');
+      panel;
+      panel = panel.parentElement?.closest('details')
+    ) {
+      panel.open = true;
+    }
+    return target;
+  };
+  const restore = () => {
+    const saved = history.state?.pageNavigation;
+    if (Array.isArray(saved?.open)) {
+      panels.forEach((panel) => {
+        panel.open = saved.open.includes(panel.id);
+      });
+    }
+    return openHashTarget();
+  };
+  let ready = false;
+  let saveFrame = 0;
+  const save = () => {
+    cancelAnimationFrame(saveFrame);
+    saveFrame = 0;
+    if (!ready) return;
+    const saved = {
+      returnTo,
+      open: panels.filter((panel) => panel.open).map((panel) => panel.id),
+      scrollY: window.scrollY,
+    };
+    history.replaceState({ ...history.state, pageNavigation: saved }, '');
+    try {
+      // Also restore when a return link loads the source as a new history entry.
+      sessionStorage.setItem(
+        storageKey,
+        JSON.stringify({ open: saved.open, scrollY: saved.scrollY }),
+      );
+    } catch {
+      // Storage restrictions must not prevent normal navigation.
+    }
+  };
+  restore();
+  panels.forEach((panel) => panel.addEventListener('toggle', save));
+  document.addEventListener('click', save, { capture: true });
+  // Update the history entry while scrolling: pagehide may be too late for reload.
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ready && !saveFrame) saveFrame = requestAnimationFrame(save);
+    },
+    { passive: true },
+  );
+  window.addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) save();
+  });
+  window.addEventListener('hashchange', openHashTarget);
+  window.addEventListener('pageshow', () => {
+    ready = false;
+    cancelAnimationFrame(saveFrame);
+    saveFrame = 0;
+    const target = restore();
+    const saved = history.state?.pageNavigation;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        if (typeof saved?.scrollY === 'number') {
+          window.scrollTo({ top: saved.scrollY, behavior: 'instant' });
+        } else {
+          target?.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+        ready = true;
+      }),
+    );
+  });
+
+  document.querySelectorAll('[data-back-link]').forEach((link) => {
+    if (!returnTo) return;
+    link.href = returnTo;
+    link.addEventListener('click', (event) => {
+      if (
+        event.button ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        history.length < 2
+      )
+        return;
+      event.preventDefault();
+      history.back();
+    });
+  });
+})();
+</script></body></html>

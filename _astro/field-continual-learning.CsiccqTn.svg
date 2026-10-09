@@ -1,0 +1,17 @@
+<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" fill="none">
+  <defs>
+    <linearGradient id="cl-bg" x1="0" y1="0" x2="1200" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="var(--field-art-start, #172721)"/><stop offset=".55" stop-color="var(--field-art-mid, #263329)"/><stop offset="1" stop-color="var(--field-art-end, #394030)"/></linearGradient>
+    <radialGradient id="cl-glow" cx="0" cy="0" r="1" gradientTransform="translate(865 220) rotate(90) scale(300 420)" gradientUnits="userSpaceOnUse"><stop stop-color="var(--field-art-line, #C4F578)" stop-opacity=".3"/><stop offset="1" stop-color="var(--field-art-line, #C4F578)" stop-opacity="0"/></radialGradient>
+    <pattern id="cl-grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" stroke="var(--field-art-line, #C5F578)" stroke-opacity=".08"/></pattern>
+  </defs>
+  <path fill="url(#cl-bg)" d="M0 0h1200v440H0z"/><path fill="url(#cl-grid)" d="M0 0h1200v440H0z"/><path fill="url(#cl-glow)" d="M0 0h1200v440H0z"/>
+  <g stroke="var(--field-art-line, #BDEB88)" stroke-opacity=".5" stroke-width="2">
+    <path d="M570 220h75l70-105h100l65 105h95l66-104h86"/>
+    <path d="M570 220h75l70 105h100l65-105h95l66 105h86"/>
+    <path d="M715 115v210M880 115v210M1041 116v209" stroke-opacity=".24" stroke-dasharray="5 8"/>
+  </g>
+  <g fill="var(--field-art-node, #182A23)" stroke="var(--field-art-line, #C4F578)" stroke-width="2"><circle cx="645" cy="220" r="15"/><circle cx="715" cy="115" r="18"/><circle cx="715" cy="325" r="18"/><circle cx="815" cy="115" r="18"/><circle cx="815" cy="325" r="18"/><circle cx="880" cy="220" r="25"/><circle cx="975" cy="220" r="18"/><circle cx="1041" cy="116" r="18"/><circle cx="1041" cy="325" r="18"/></g>
+  <g fill="var(--field-art-line, #C4F578)"><circle cx="645" cy="220" r="5"/><circle cx="715" cy="115" r="6"/><circle cx="715" cy="325" r="6"/><circle cx="815" cy="115" r="6"/><circle cx="815" cy="325" r="6"/><circle cx="880" cy="220" r="9"/><circle cx="975" cy="220" r="6"/><circle cx="1041" cy="116" r="6"/><circle cx="1041" cy="325" r="6"/></g>
+  <path d="M544 40v360M1135 40v360" stroke="var(--field-art-line, #C4F578)" stroke-opacity=".15"/>
+  <g fill="var(--field-art-line, #C4F578)" fill-opacity=".6"><circle cx="575" cy="73" r="2"/><circle cx="1115" cy="68" r="2"/><circle cx="575" cy="365" r="2"/><circle cx="1115" cy="370" r="2"/></g>
+</svg>
